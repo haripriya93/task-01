@@ -1,10 +1,12 @@
-// JavaScript for mobile navigation toggle
-const navLinks = document.querySelector('.nav-links');
-const toggleButton = document.createElement('button');
-toggleButton.innerText = 'Menu';
-toggleButton.classList.add('toggle-button');
-document.querySelector('.navbar').appendChild(toggleButton);
+function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.icon');
 
-toggleButton.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-})
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        icon.textContent = "➕"; // Change icon to plus
+    } else {
+        content.style.display = "block";
+        icon.textContent = "➖"; // Change icon to minus
+    }
+}
